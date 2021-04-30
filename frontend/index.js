@@ -4,49 +4,18 @@ const socket = io('https://mafia-roles.alexkad58.repl.co');
 
 socket.on('init', handleInit);
 
-const gameScreen = document.getElementById('gameScreen');
-const initialScreen = document.getElementById('initialScreen');
-const bodyPartDisplay = document.getElementById('bodyPartDisplay');
-const doneButton = document.getElementById('doneButton')
-const canvas = document.getElementById('canvas');
-ctx = canvas.getContext('2d');
 
-function init() {
-  initialScreen.style.display = "none";
-  gameScreen.style.display = "block";
+const queueText = document.getElementById('queue')
+const rollButton = document.getElementById('roll')
 
-  gameActive = true;
+function getQueue() {
+    let rolesArr = ['маф','маф','маф','ком','мир','мир','мир','мир','мир','мир']
+    shuffle(rolesArr)
+    let queueString = ''
+    let arr = [1,2,3,4,5,6,7,8,9,10]
+    shuffle(arr)
+    arr.forEach((e, i) => {
+        
+        queueText.innerHTML(`${e} `)
+    })
 }
-
-function paintGame(state) {
-
-  if (state.players[queuePos].isDrawing) {
-    canvas.style.display = 'block'
-    canvas.width = canvas.height = 600;
-
-    ctx.fillStyle = BG_COLOUR;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = BG_COLOUR;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    doneButton.style.display = 'block'
-    doneButton.addEventListener('click', done);
-    initDraw()
-  } else {
-    doneButton.style.display = 'none'
-    canvas.style.display = 'none'
-  }
-}
-
-function handleInit(roomName, queue, gameState) {
-  queuePos = queue[roomName].indexOf(socket.id)
-  bodyPart = gameState.players[queuePos].bodyPart
-  bodyPartDisplay.innerText = `Ты рисуешь: ${bodyPart}`
-}
-
-
-
-
-
-
-
-
