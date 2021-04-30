@@ -1,0 +1,19 @@
+{
+  "name": "mafia-roles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkad58/mafia-roles.git"
+  },
+  "author": "alexkad58",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexkad58/mafia-roles/issues"
+  },
+  "homepage": "https://github.com/alexkad58/mafia-roles#readme"
+}
