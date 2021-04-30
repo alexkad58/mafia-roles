@@ -2,7 +2,7 @@ const BG_COLOUR = 'white';
 
 const socket = io('https://mafia-roles.alexkad58.repl.co');
 
-socket.on('init', handleInit);
+// socket.on('init');
 
 
 const queueText = document.getElementById('queue')
