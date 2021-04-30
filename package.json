@@ -18,6 +18,7 @@
   "homepage": "https://github.com/alexkad58/mafia-roles#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "socket.io": "^4.0.1",
     "socketio": "^1.0.0"
   }
 }
