@@ -8,6 +8,8 @@ socket.on('init', handleInit);
 const queueText = document.getElementById('queue')
 const rollButton = document.getElementById('roll')
 
+rollButton.onclick(getQueue())
+
 function getQueue() {
     let rolesArr = ['маф','маф','маф','ком','мир','мир','мир','мир','мир','мир']
     shuffle(rolesArr)
