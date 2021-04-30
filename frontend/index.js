@@ -11,6 +11,18 @@ const rollButton = document.getElementById('roll')
 rollButton.on('click', getQueue())
 
 function getQueue() {
+
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
+
     let rolesArr = ['маф','маф','маф','ком','мир','мир','мир','мир','мир','мир']
     shuffle(rolesArr)
     let queueString = ''
