@@ -6,12 +6,15 @@ const socket = io('https://mafia-roles.alexkad58.repl.co');
 
 
 const queueText = document.getElementById('queue')
-const rollButton = document.getElementById('roll')
+const rollButton = document.getElementById('rollBtn')
 
-// rollButton.onclick(getQueue())
+rollButton.onclick = getQueue
 
-document.addEventListener('DOMContentLoaded', function() {
-  function shuffle(a) {
+document.addEventListener('DOMContentLoaded', getQueue(), false);
+
+
+function getQueue() {
+function shuffle(a) {
         var j, x, i;
         for (i = a.length - 1; i > 0; i--) {
             j = Math.floor(Math.random() * (i + 1));
@@ -31,7 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const maf = document.getElementById(`maf`)
     const kom = document.getElementById(`kom`)
     const mir = document.getElementById(`mir`)
- 
+    maf.innerHTML = 'Мафия: '
+    kom.innerHTML = 'Комисар: '
+    mir.innerHTML = 'Мирные: '
+
     arr.forEach((e, i) => {
       console.log(rolesArr, rolesArr[i] )
       queueEl = document.getElementById(`${i + 1}`)
@@ -81,11 +87,5 @@ document.addEventListener('DOMContentLoaded', function() {
       mir.style.wordSpacing = '10px'
       
     })
-   
-}, false);
-
-
-function getQueue() {
-
     
 }
